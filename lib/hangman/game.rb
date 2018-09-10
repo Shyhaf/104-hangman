@@ -1,4 +1,5 @@
 module Hangman
+  Signal.trap("INT")  { Graphics.clear_screen; puts "Goodbye cruel word!"; exit } 
   class Game
     attr_reader :chances, :word, :wrong_tries, :guess, :wrong_guess
 
@@ -13,7 +14,7 @@ module Hangman
     def play
       Graphics.clear_screen
       puts 'Guess this word: ' + Graphics.obfuscate_word(word, '')
-
+      
       while true
         print "[#{chances - wrong_tries} chances left]: "
 
@@ -42,7 +43,16 @@ module Hangman
                 puts 'Whoop Whoop!! ' + placeholder
     
               unless placeholder.include? Graphics::OBFUSCATION_CHAR
+                Graphics.clear_screen
                 puts Graphics::ALIVE
+                Time.new
+                sleep 0.3
+                Graphics.clear_screen
+                puts Graphics::ALIVE2
+                Time.new
+                sleep 0.3
+                Graphics.clear_screen
+                puts Graphics::ALIVE3
                 puts "\n\nWELL DONE!! YOU SURVIVED"
                 break
               end 
@@ -70,8 +80,10 @@ module Hangman
             break
           
           end       
+         
         end
       end
     end
   end
+  
 end

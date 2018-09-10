@@ -13,9 +13,26 @@ HANG
 
     ALIVE = <<WIN
 
+    (•_•)
+    <)  )╯
+    /   \
+    
+WIN
+
+ALIVE2 = <<WIN
+
+  \(•_•)
+  (  (>
+  /   \
+    
+WIN
+
+ALIVE3 = <<WIN
+
   (•_•)
-  <)  )╯
-  /   \\
+  <)  )>
+  /   \
+    
 WIN
 
     OBFUSCATION_CHAR = "👾"
